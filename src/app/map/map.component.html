@@ -2,7 +2,7 @@
 
 <article *ngIf="!loading">
   <div style="padding-top: 10px">
-  <button  class="btn btn-primary">Logout</button>
+  <button  class="btn btn-primary" (click)="logout()">Logout</button>
   </div>
   <highcharts-chart
     [Highcharts]="Highchart"

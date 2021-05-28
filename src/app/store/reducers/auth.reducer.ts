@@ -13,7 +13,7 @@ export const initialState: State = {
   user: {
     id: null,
     username: null,
-    email: null
+    pass: null
   },
   error: null,
 };
@@ -34,7 +34,7 @@ export const reducer = createReducer(
       user: {
         id: null,
         username: null,
-        email: null
+        pass: null
       },
       error: action.error,
     };
@@ -45,7 +45,7 @@ export const reducer = createReducer(
       user: {
         id: null,
         username: null,
-        email: null
+        pass: null
       },
       error: null,
     };

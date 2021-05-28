@@ -6,6 +6,7 @@ import proj4 from 'proj4';
 // import {AuthService} from "../services/auth.service";
 import {DataService} from "../services/data.service";
 import {finalize} from "rxjs/operators";
+import {AuthService} from "../services/auth.service";
 
 if (typeof Highcharts === 'object') {
   HC_map(Highcharts)
@@ -23,15 +24,15 @@ export class MapComponent implements OnInit {
   public loading = true;
 
   constructor(
-              private dataService: DataService) { }
+              private dataService: DataService, private auth: AuthService) { }
 
   // private auth: AuthService,
 
   ngOnInit() {
     this.loading = true;
-    // if (localStorage.getItem('login') !== 'true'){
-    //   this.auth.logout()
-    // }
+    if (localStorage.getItem('login') !== 'true'){
+      this.auth.logout()
+    }
     this.loadData();
   }
 
@@ -101,6 +102,6 @@ export class MapComponent implements OnInit {
   }
 
   public logout(){
-    // this.auth.logout()
+    this.auth.logout()
   }
 }
