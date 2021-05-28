@@ -6,6 +6,6 @@ export interface User {
 
 export var UserModel: User = {
   id: null,
-  username: 'Admin',
-  email: 'Pa$$word',
+  username: null,
+  email: null,
 };

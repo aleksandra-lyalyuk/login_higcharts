@@ -21,12 +21,12 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(username: any, pass: any) {
-    console.log(username.value, pass.value)
-    // this.store.dispatch(
-    //   fromAuthActions.loginPage({
-    //     username: username.value,
-    //     password: pass.value,
-    //   })
-    // );
+    // console.log(username.value, pass.value)
+    this.store.dispatch(
+      fromAuthActions.loginPage({
+        username: username.value,
+        password: pass.value,
+      })
+    );
   }
 }
