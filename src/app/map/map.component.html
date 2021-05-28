@@ -1,0 +1,13 @@
+<div *ngIf="loading" class="loader"></div>
+
+<article *ngIf="!loading">
+  <div style="padding-top: 10px">
+  <button  class="btn btn-primary">Logout</button>
+  </div>
+  <highcharts-chart
+    [Highcharts]="Highchart"
+    [constructorType]="'mapChart'"
+    [options]="chartMap"
+    style="width: 100%; height: 650px; display: block;"
+  ></highcharts-chart>
+</article>
