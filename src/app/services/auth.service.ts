@@ -9,13 +9,11 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class AuthService {
 
-  baseUrl: string = 'http://localhost:3000/users/';
 
   constructor(private http: HttpClient) {}
-  //Fake Login API
+
   login(username: string, password: string): Observable<any> {
-    return this.http.get(this.baseUrl + '?username=' + username).pipe(
-      switchMap((users) => {
+
         let user = {username: username, pass: password};
         if (user) {
           localStorage.setItem('user', JSON.stringify(user))
@@ -23,7 +21,6 @@ export class AuthService {
         } else {
           return throwError('Unable to login');
         }
-      })
-    );
   }
+
 }
